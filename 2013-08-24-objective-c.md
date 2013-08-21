@@ -132,6 +132,17 @@ row数 : 7
 #### 初期表示
 
 
+##### Static Cellのカスタムセルを作る手順
+
+Static Cell を生成する際は dequeueReusableCellWithIdentifier: メソッドが
+nilを返すため、実行時エラーになってしまう。
+
+    *** Terminating app due to uncaught exception 'NSInternalInconsistencyException',
+    reason:'UITableView dataSource must return a cell from tableView:cellForRowAtIndexPath:'
+
+各TableViewCellのIBOutletを定義して、cellForRowAtIndexPath で indexPath に応じたCellを返すようにする
+
+[Configuring Table Views](https://developer.apple.com/library/ios/releasenotes/Miscellaneous/RN-AdoptingStoryboards/index.html#//apple_ref/doc/uid/TP40011297-CH1-DontLinkElementID_5)
 
 <br /><br /><br />
 
